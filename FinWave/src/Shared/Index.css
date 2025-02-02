@@ -1,0 +1,114 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Configurações de layout */
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    color: #333;
+    scroll-behavior: smooth; /* Animação suave para scroll */
+}
+
+/* Menu Lateral */
+/* Menu Lateral - Deixe ele fixo na tela */
+.sidebar {
+    width: 250px;
+    background-color: #ff7f11;
+    padding: 1.5rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed; /* Fixa o menu lateral na tela */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    overflow-y: auto; /* Permite a rolagem se necessário */
+}
+
+/* Ajusta o conteúdo principal para não ficar atrás do menu */
+.main-content {
+    margin-left: 250px; /* Deixe o conteúdo principal ao lado do menu */
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+
+/* Logo e título */
+.sidebar .logo {
+    font-size: 2rem;
+    font-weight: 700; /* Negrito para destacar */
+    letter-spacing: 2px; /* Espaçamento entre as letras para dar um efeito mais elegante */
+    color: #fff;
+    text-transform: uppercase; /* Maiúsculas para um visual mais forte e moderno */
+    background: linear-gradient(90deg, #ff7f11, #ff4d00); /* Gradiente em tons quentes para representar energia e inovação */
+    -webkit-background-clip: text; /* Faz o gradiente ser aplicado apenas ao texto */
+    background-clip: text;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de brilho e animação suave no hover */
+.sidebar .logo:hover {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.5); /* Brilho suave ao passar o mouse */
+    transform: scale(1.1); /* Aumenta um pouco o tamanho ao passar o mouse */
+    cursor: pointer;
+}
+
+/* Adicionando um efeito de sublinhado animado */
+.sidebar .logo::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.sidebar .logo:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Links do menu */
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-bottom: 1rem;
+}
+
+.sidebar a:hover {
+    background-color: #e66f0d;
+    transform: translateX(10px); /* Desloca o link para a direita ao passar o mouse */
+}
+
+/* Ícones */
+.sidebar a .icon {
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+/* Botão de Logout */
+.logout {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+}

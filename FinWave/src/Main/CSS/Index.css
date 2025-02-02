@@ -1,0 +1,328 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Configurações de layout */
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    color: #333;
+    scroll-behavior: smooth; /* Animação suave para scroll */
+}
+
+/* Menu Lateral */
+/* Menu Lateral - Deixe ele fixo na tela */
+.sidebar {
+    width: 250px;
+    background-color: #ff7f11;
+    padding: 1.5rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed; /* Fixa o menu lateral na tela */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    overflow-y: auto; /* Permite a rolagem se necessário */
+}
+
+/* Ajusta o conteúdo principal para não ficar atrás do menu */
+.main-content {
+    margin-left: 250px; /* Deixe o conteúdo principal ao lado do menu */
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+
+/* Logo e título */
+.sidebar .logo {
+    font-size: 2rem;
+    font-weight: 700; /* Negrito para destacar */
+    letter-spacing: 2px; /* Espaçamento entre as letras para dar um efeito mais elegante */
+    color: #fff;
+    text-transform: uppercase; /* Maiúsculas para um visual mais forte e moderno */
+    background: linear-gradient(90deg, #ff7f11, #ff4d00); /* Gradiente em tons quentes para representar energia e inovação */
+    -webkit-background-clip: text; /* Faz o gradiente ser aplicado apenas ao texto */
+    background-clip: text;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de brilho e animação suave no hover */
+.sidebar .logo:hover {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.5); /* Brilho suave ao passar o mouse */
+    transform: scale(1.1); /* Aumenta um pouco o tamanho ao passar o mouse */
+    cursor: pointer;
+}
+
+/* Adicionando um efeito de sublinhado animado */
+.sidebar .logo::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.sidebar .logo:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Links do menu */
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-bottom: 1rem;
+}
+
+.sidebar a:hover {
+    background-color: #e66f0d;
+    transform: translateX(10px); /* Desloca o link para a direita ao passar o mouse */
+}
+
+/* Ícones */
+.sidebar a .icon {
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+/* Botão de Logout */
+.logout {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* Seções com borda arredondada e sombra */
+.section {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Suaviza a transição da sombra e borda */
+}
+
+/* Efeito de foco e hover nas seções */
+.section:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+    transform: translateY(-5px); /* Levanta a seção ao passar o mouse */
+}
+
+/* Títulos das seções */
+.section h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Estilos de ícones (font-awesome) */
+.icon-wallet:before { content: '💼'; }
+.icon-news:before { content: '📰'; }
+.icon-market:before { content: '📈'; }
+.icon-home:before { content: '🏠'; }
+.icon-logout:before { content: '🚪'; }
+
+/* Efeitos de transição para links do menu */
+.sidebar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.sidebar a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* News */
+
+#news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.news-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Flexbox para organizar o conteúdo verticalmente */
+    justify-content: space-between; /* Garante que o conteúdo não fique espalhado */
+    height: auto; /* Ajuste dinâmico de altura */
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.news-item h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    text-transform: capitalize;
+}
+
+.news-item p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    flex-grow: 1; /* Faz o conteúdo de texto crescer e preencher o espaço */
+}
+
+.news-item small {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+}
+
+.news-item img {
+    width: 100%;
+    height: 120px; /* Reduziu a altura da imagem */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+
+/*Mercado BitCoin*/
+/* Container de criptomoedas */
+#crypto-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.crypto-info {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.crypto-info .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.crypto-info .crypto-name {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.crypto-info .crypto-price {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+/*Bacem*/
+
+/* Estilo para a nova aba "Estado" */
+/* Estilo para a nova aba "Estado" */
+#estado {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#estado h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#estado p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Container que envolve as informações econômicas */
+#economic-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas para distribuir bem os itens */
+    gap: 20px;
+}
+
+/* Estilo de cada item econômico */
+.economic-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.economic-item .label {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+.economic-item span {
+    font-size: 18px;
+    color: #007bff;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    #economic-info {
+        grid-template-columns: 1fr; /* Uma coluna em dispositivos móveis */
+    }
+}
+
+

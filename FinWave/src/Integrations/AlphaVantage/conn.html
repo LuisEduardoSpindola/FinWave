@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<style>
+    /* Estilo para o contêiner de notícias */
+#news-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Quatro colunas */
+    gap: 20px; /* Espaçamento entre as notícias */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o contêiner */
+}
+
+/* Estilo para cada notícia */
+.news-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+/* Animação ao passar o mouse */
+.news-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Título da notícia */
+.news-item h4 {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    color: #0073e6;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.news-item h4 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.news-item h4 a:hover {
+    color: #005bb5;
+}
+
+/* Resumo da notícia */
+.news-item p {
+    font-size: 0.95em;
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.6;
+    max-height: 80px; /* Limite de altura para manter o layout uniforme */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Data de publicação */
+.news-item small {
+    display: block;
+    color: #888;
+    margin-top: 15px;
+    font-size: 0.85em;
+}
+
+/* Fundo do corpo da página */
+body {
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Ajuste para título da seção */
+.section h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+/* Ajustes adicionais para centralizar o conteúdo principal */
+.main-content {
+    padding: 40px 20px;
+}
+
+</style>
+</html>

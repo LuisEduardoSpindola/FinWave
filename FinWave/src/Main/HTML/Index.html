@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Investimentos - Menu Lateral</title>
+    <link rel="stylesheet" href="../CSS/Index.css">
+</head>
+<body> 
+    
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <div class="logo">FinWave</div>
+        <a href="#minha-carteira" class="link">
+            <span class="icon icon-wallet"></span>Minha Carteira
+        </a>
+        <a href="#noticias" class="link">
+            <span class="icon icon-news"></span>Notícias
+        </a>
+        <a href="#mercado" class="link">
+            <span class="icon icon-market"></span>Mercado
+        </a>
+        <a href="#estado" class="link">
+            <span class="icon icon-state"></span>Estado
+        </a>
+        <a href="#home-broker" class="link">
+            <span class="icon icon-home"></span>Home Broker
+        </a>
+        <a href="../../Sign/HTML/Index.html" class="link logout">
+            <span class="icon icon-logout"></span>Logout
+        </a>
+    </div>
+    
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <div class="section" id="minha-carteira">
+            <h2>Minha Carteira</h2>
+            <p>Aqui você pode visualizar e gerenciar os ativos que possui, verificar o histórico de transações e acompanhar o desempenho do seu portfólio.</p>
+        </div>
+        
+
+        <!-- Aba Mercado -->
+        <div class="section" id="mercado">
+            <h2>Mercado</h2>
+            <p>Acompanhe as tendências de mercado, cotações e gráficos em tempo real para tomar decisões informadas sobre seus investimentos.</p>
+            <div id="crypto-container">
+                <div class="crypto-info">
+                    <span class="icon icon-btc"></span>
+                    <span class="crypto-name">Bitcoin (BTC): </span>
+                    <span class="crypto-price" id="btc-price">Carregando...</span>
+                </div>
+                <div class="crypto-info">
+                    <span class="icon icon-eth"></span>
+                    <span class="crypto-name">Ethereum (ETH): </span>
+                    <span class="crypto-price" id="eth-price">Carregando...</span>
+                </div>
+                <div id="stock-market-container">
+                    <h3>Ações</h3>
+                    <div id="stock-info"></div> <!-- Exibirá informações sobre as ações -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Nova Aba Estado -->
+        <div class="section" id="estado">
+            <h2>Estado</h2>
+            <p>Acompanhe os dados econômicos do país, como a cotação do dólar, taxa de inflação, taxa SELIC e mais.</p>
+            <div id="economic-info" class="economic-info">
+                <div class="economic-item" id="dolar-container">
+                    <span class="label">Dólar:</span> <span id="dolar-price">Carregando...</span>
+                </div>
+                <div class="economic-item" id="selic-container">
+                    <span class="label">Taxa SELIC:</span> <span id="selic-rate">Carregando...</span>
+                </div>
+                <div class="economic-item" id="inflacao-container">
+                    <span class="label">Inflação (IPCA):</span> <span id="inflacao-rate">Carregando...</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="section" id="home-broker">
+            <h2>Home Broker</h2>
+            <p>Aqui você tem acesso ao seu Home Broker para realizar operações de compra e venda de ativos, gerenciar ordens e acompanhar o status de suas transações.</p>
+        </div> -->
+    </div>
+
+    <script type="module" src="../../Integrations/AlphaVantage/conn.js"></script>
+    <script type="module" src="../../Integrations/MercadoBitCoin/conn.js"></script>
+    <script type="module" src="../../Integrations/Bacem/conn.js"></script>
+    <script type="module" src="../../Integrations/Yahoofinance/conn.js"></script>
+    <script type="module" src="../../Integrations/AlphaVantage/Mercado/conn.js"></script>
+    <script src="../JavaScript/script.js"></script>
+    <script setup>
+        import Menu from "../../Shared/Menu.vue";
+    </script>
+</body>
+</html>
